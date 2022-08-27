@@ -1,0 +1,67 @@
+import java.util.Scanner;
+public class Practice {
+      public static int power(int a,long m)
+      {
+    	  int pw=1;
+    	  for(int i=1;i<=m;i++)
+    	  {
+    		  pw=pw*a;
+    	  }
+    	  return pw;
+      }
+      public static boolean check(int b)
+      {
+    	  int flag=0;
+    	  for(int i=2;i<=b/2;i++)
+    	  {
+    		  if(b%i==0)
+    		  {
+    			  flag=1;
+    			  break;	  
+    		  }
+    	  }
+    		  if(flag==0)
+    		  {
+    			  return true;
+    		  }
+    		  else
+    		  {
+    			  return false;
+    		  }
+     }
+      public static long Trry(long l)
+      {
+    	  int d= (power(2,l)-1)*power(2,l-1);
+    	  return d;
+      }
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		    long[] a_p =new long[15];
+	        Scanner sc = new Scanner (System.in);
+	        long i=2l;
+	        int a=0;
+	        System.out.println("enter a value");
+	        int n=sc.nextInt();
+	        while(true)
+	        {
+	        	int c=power(2,i)-1;
+	        	if(check(c)==true)
+	        	{
+	        		a_p[a]=Trry(i);
+	        		a++;
+	        		System.out.println("perfect no "+i);
+	        		if(a==n)
+	            	{
+	            		break;
+	            	}
+	        	}
+	        	i++;
+	        }
+	        for(int k=0;k<a;k++)
+	        {
+	        	System.out.println(a_p[k]);
+	        }
+		
+	}
+
+}
